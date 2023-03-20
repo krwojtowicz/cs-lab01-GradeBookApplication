@@ -22,6 +22,10 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
 
+            double bestGrade = Students.Count / 5;
+
+
+
             return base.GetLetterGrade(averageGrade);
         }
 
