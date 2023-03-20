@@ -22,7 +22,14 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
 
-            double bestGrade = Students.Count / 5;
+            double N = Students.Count / 5;
+
+            if (averageGrade >= Students[(int)N].AverageGrade) return 'A';
+            else if (averageGrade >= Students[(int)N * 2].AverageGrade) return 'B';
+            else if (averageGrade >= Students[(int)N * 3].AverageGrade) return 'C';
+            else if (averageGrade >= Students[(int)N * 4].AverageGrade) return 'D';
+            else  return 'F';
+
 
 
 
