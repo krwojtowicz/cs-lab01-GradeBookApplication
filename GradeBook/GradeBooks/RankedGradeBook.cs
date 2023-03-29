@@ -22,18 +22,16 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
 
-            double N = Students.Count / 5;
-
-            if (averageGrade >= Students[(int)N].AverageGrade) return 'A';
-            else if (averageGrade >= Students[(int)N * 2].AverageGrade) return 'B';
-            else if (averageGrade >= Students[(int)N * 3].AverageGrade) return 'C';
-            else if (averageGrade >= Students[(int)N * 4].AverageGrade) return 'D';
-            else  return 'F';
-
-
-
-
-            return base.GetLetterGrade(averageGrade);
+            if (averageGrade >= 80)
+                return 'A';
+            else if (averageGrade >= 60)
+                return 'B';
+            else if (averageGrade >= 40)
+                return 'C';
+            else if (averageGrade >= 20)
+                return 'D';
+            else
+                return 'F';
         }
 
         public override void CalculateStatistics()
